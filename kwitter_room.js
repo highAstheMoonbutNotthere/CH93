@@ -7,7 +7,7 @@ const firebaseConfig = {
       messagingSenderId: "589105735",
       appId: "1:589105735:web:9479f9baa738c174ebbf62",
       measurementId: "G-NB2NJCB6YN"
-    };
+};
 
 //ADD YOUR FIREBASE LINKS HERE
 firebase.initializeApp(firebaseConfig);
@@ -34,7 +34,15 @@ function logout() {
 }
 
 function addroom() {
-
+      roomname = document.getElementById("room_name").value;
+      firebase.database().ref("/").child(roomname).update({
+            purpose: "adding new room"
+      });
+      localStorage.setItem("roomname", roomname);
+window.location="kwitter_page.html"
 }
 
+function addUser(){
+      
+}
 
