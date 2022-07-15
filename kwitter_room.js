@@ -21,9 +21,8 @@ function getData() {
             document.getElementById("output").innerHTML = ""; snapshot.forEach(function (childSnapshot) {
                   childKey = childSnapshot.key;
                   Room_names = childKey;
-                  //Start code
-
-                  //End code
+                  row = "<div class='room_name' id=" + Room_names + " onclick='redirect(this.id)'>" + Room_names + "</div><hr>";
+                  document.getElementById("output").innerHTML += row;
             });
       });
 }
@@ -39,10 +38,15 @@ function addroom() {
             purpose: "adding new room"
       });
       localStorage.setItem("roomname", roomname);
-window.location="kwitter_page.html"
+      // window.location = "kwitter_page.html"
 }
 
-function addUser(){
-      
+function addUser() {
+
 }
 
+function redirect(name) {
+      localStorage.setItem("roomname", name);
+      // window.location = "kwitter_page.html"
+
+}
