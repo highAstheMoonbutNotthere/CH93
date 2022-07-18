@@ -29,7 +29,9 @@ function getData() {
 getData();
 
 function logout() {
-
+      localStorage.removeItem("username");
+      localStorage.removeItem("roomname");
+      window.location = "index.html"
 }
 
 function addroom() {
@@ -38,15 +40,11 @@ function addroom() {
             purpose: "adding new room"
       });
       localStorage.setItem("roomname", roomname);
-      // window.location = "kwitter_page.html"
-}
-
-function addUser() {
-
+      window.location = "kwitter_page.html"
 }
 
 function redirect(name) {
       localStorage.setItem("roomname", name);
-      // window.location = "kwitter_page.html"
+      window.location = "kwitter_page.html"
 
 }
